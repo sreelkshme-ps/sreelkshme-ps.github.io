@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sreelakshmi P S — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C0F14;
+    --surface:#151A22;
+    --border:#242B36;
+    --gold:#E3B04B;
+    --teal:#4FBFA8;
+    --text:#EDEFF2;
+    --muted:#8B93A1;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk',sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(12,15,20,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 32px;
+  }
+  .nav-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.05rem;}
+  .nav-links{display:flex;gap:28px;font-size:0.92rem;color:var(--muted);}
+  .nav-links a:hover{color:var(--gold);}
+
+  /* hero */
+  header.hero{padding:100px 0 70px;}
+  .eyebrow-pulse{
+    display:flex;align-items:center;gap:12px;margin-bottom:26px;color:var(--teal);
+    font-size:0.85rem;
+  }
+  .pulse-line{
+    position:relative;width:64px;height:2px;background:var(--border);overflow:hidden;
+  }
+  .pulse-line::after{
+    content:'';position:absolute;top:0;left:-30%;width:30%;height:100%;
+    background:var(--teal);
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%{left:-30%;}
+    50%{left:100%;}
+    100%{left:100%;}
+  }
+  h1.title{font-size:3.1rem;font-weight:700;max-width:780px;}
+  h1.title span{color:var(--gold);}
+  .role{
+    font-size:1.15rem;color:var(--muted);margin-top:18px;max-width:600px;
+  }
+  .hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .btn{
+    padding:12px 22px;border-radius:6px;font-size:0.92rem;font-weight:500;
+    border:1px solid var(--border);
+  }
+  .btn.primary{background:var(--gold);color:#14110A;border-color:var(--gold);}
+  .btn.primary:hover{opacity:0.88;}
+  .btn.ghost:hover{border-color:var(--teal);color:var(--teal);}
+
+  /* section headings */
+  section{padding:70px 0;border-top:1px solid var(--border);}
+  .section-head{margin-bottom:44px;}
+  .section-head h2{font-size:1.7rem;}
+  .section-head p{color:var(--muted);margin-top:8px;max-width:520px;}
+
+  /* project grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .card{
+    background:var(--surface);border:1px solid var(--border);border-radius:8px;
+    padding:26px 26px 24px;position:relative;overflow:hidden;
+    transition:transform 0.2s ease, border-color 0.2s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--accent);}
+  .card::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);
+  }
+  .card h3{font-size:1.15rem;margin-bottom:10px;}
+  .card p.desc{color:var(--muted);font-size:0.92rem;margin:0 0 16px;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;}
+  .tag{
+    font-size:0.75rem;color:var(--muted);border:1px solid var(--border);
+    padding:3px 10px;border-radius:4px;
+  }
+  .card-links{display:flex;gap:18px;font-size:0.85rem;}
+  .card-links a{color:var(--accent);border-bottom:1px solid transparent;}
+  .card-links a:hover{border-color:var(--accent);}
+
+  /* skills */
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+  .skill-group h4{font-size:0.8rem;color:var(--muted);font-weight:500;margin-bottom:14px;text-transform:none;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .skill-tags span{
+    font-size:0.85rem;padding:6px 12px;background:var(--surface);
+    border:1px solid var(--border);border-radius:5px;
+  }
+
+  /* footer */
+  footer{padding:50px 0 70px;text-align:left;}
+  footer .foot-row{
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;
+  }
+  footer h2{font-size:1.6rem;max-width:420px;}
+  .foot-links{display:flex;gap:24px;font-size:0.92rem;}
+  .foot-links a{color:var(--gold);}
+  .foot-note{margin-top:40px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border);padding-top:20px;}
+
+  @media (max-width:760px){
+    .grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    h1.title{font-size:2.2rem;}
+    .nav-links{gap:16px;font-size:0.82rem;}
+    header.hero{padding:70px 0 50px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .pulse-line::after{animation:none;}
+    .card{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Sreelakshmi P S</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow-pulse">
+      <div class="pulse-line"></div>
+      <span>Open to Data Analyst &amp; AI Data Analyst roles</span>
+    </div>
+    <h1 class="title">Turning raw data into decisions, <span>one dashboard at a time.</span></h1>
+    <p class="role">Data Analyst | AI &amp; ML Enthusiast — Power BI, SQL, Excel, Tableau &amp; Python. Self-taught, six shipped projects deep, and building the next one right now.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#work">View projects</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p>Six end-to-end projects spanning Excel, SQL, Tableau, Power BI, and machine learning.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card" style="--accent:#3D5A80;">
+        <h3>Superstore Sales Dashboard</h3>
+        <p class="desc">Interactive Excel dashboard analyzing 9,994 orders (2014–2017) with 8 pivot charts, KPI cards, and dynamic slicers. Sales grew 51%; Technology was the most profitable category at 17.4% margin.</p>
+        <div class="tags"><span class="tag">Excel</span><span class="tag">Pivot Tables</span><span class="tag">Dashboards</span></div>
+        <div class="card-links"><a href="https://github.com/sreelkshme-ps/super-store-sales" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+
+      <div class="card" style="--accent:#D9755C;">
+        <h3>Healthcare SQL Analysis</h3>
+        <p class="desc">End-to-end MySQL analysis of 55,500 patient records — cleaning, deduplication, and 7 business queries. Diabetes was the most common condition (16.78%); Cigna covered the most patients.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Data Cleaning</span></div>
+        <div class="card-links"><a href="https://github.com/sreelkshme-ps/healthcare-sql-analysis" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+
+      <div class="card" style="--accent:#4A7FBF;">
+        <h3>COVID-19 Global Analysis</h3>
+        <p class="desc">Tableau dashboard covering 187 countries — a filled world map, top-10 breakdowns, and recovery by WHO region, published live on Tableau Public. US and Brazil had the highest case counts.</p>
+        <div class="tags"><span class="tag">Tableau</span><span class="tag">Public</span></div>
+        <div class="card-links">
+          <a href="https://public.tableau.com/app/profile/sreelakshmi.p.s" target="_blank" rel="noopener">Live dashboard →</a>
+          <a href="https://github.com/sreelkshme-ps/covid19-tableau-analysis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="card" style="--accent:#8B5CF6;">
+        <h3>HR Analytics Dashboard</h3>
+        <p class="desc">Six-page Power BI suite on IBM's attrition dataset (1,470 employees) with custom sparkline KPI cards and an 8-way filter bar. Sales Reps churn highest at 40%; overtime staff leave at nearly 3x the rate of others.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Deneb</span></div>
+        <div class="card-links"><a href="https://github.com/sreelkshme-ps/HR-Analytics-PowerBI-Dashboard" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+
+      <div class="card" style="--accent:#E94F87;">
+        <h3>GlowGrid — Skincare Analytics</h3>
+        <p class="desc">Five-page Power BI dashboard on 8,494 Sephora skincare products and 1.1M+ reviews, built entirely in Power Query with a custom beauty-tech visual theme.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span></div>
+        <div class="card-links"><a href="https://github.com/sreelkshme-ps/glowgrid-skincare-dashboard" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+
+      <div class="card" style="--accent:#E8C77A;">
+        <h3>Customer Retention AI</h3>
+        <p class="desc">Full churn-prediction pipeline on 7,043 telecom customers — cleaning, EDA, SQL, and a Logistic Regression model (84.2% ROC-AUC) feeding a one-page risk-scoring dashboard.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Machine Learning</span><span class="tag">Power BI</span></div>
+        <div class="card-links"><a href="https://github.com/sreelkshme-ps/Customer-Retention-AI-Dashboard" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Tools &amp; skills</h2>
+      <p>What I build with, day to day.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Analysis</h4>
+        <div class="skill-tags">
+          <span>Excel</span><span>SQL</span><span>Power Query</span><span>DAX</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Visualization</h4>
+        <div class="skill-tags">
+          <span>Power BI</span><span>Tableau</span><span>Deneb</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Other</h4>
+        <div class="skill-tags">
+          <span>Python</span><span>Machine Learning</span><span>MySQL Workbench</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Certifications &amp; virtual experience</h2>
+      <p>Formal training and simulated real-world work, alongside the projects above.</p>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h4>Virtual experience</h4>
+        <div class="skill-tags">
+          <span>Deloitte Australia — Forage</span><span>Tata iQ — Forage</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Microsoft certifications</h4>
+        <div class="skill-tags">
+          <span>Power BI</span><span>Microsoft Fabric</span><span>Data Analysis</span><span>Copilot in Power BI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Other certifications</h4>
+        <div class="skill-tags">
+          <span>Cisco Networking Academy</span><span>FutureSkills Prime</span><span>Data Entry</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-row">
+      <h2>Let's talk about how data can work for your team.</h2>
+      <div class="foot-links">
+        <a href="https://linkedin.com/in/sreelakshmi-p-s-7b7893305" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/sreelkshme-ps" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="foot-note">Sreelakshmi P S — Data Analyst Portfolio</div>
+  </div>
+</footer>
+
+</body>
+</html>
